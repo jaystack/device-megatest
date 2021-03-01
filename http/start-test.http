@@ -1,0 +1,108 @@
+POST https://ts2k6fvv6g.execute-api.us-east-1.amazonaws.com
+Content-Type: application/json
+
+{
+    "devices": [
+        {
+            "os": "ios",
+            "os_version": "14",
+            "browser": "iphone",
+            "device": "iPhone XS",
+            "browser_version": null
+        },
+        {
+            "os": "ios",
+            "os_version": "14",
+            "browser": "iphone",
+            "device": "iPhone 12 Pro Max",
+            "browser_version": null
+        },       
+        {
+            "os": "ios",
+            "os_version": "12",
+            "browser": "iphone",
+            "device": "iPhone 7",
+            "browser_version": null
+        },
+        {
+            "os": "ios",
+            "os_version": "10",
+            "browser": "iphone",
+            "device": "iPhone 7",
+            "browser_version": null
+        },
+        {
+            "os": "android",
+            "os_version": "11.0",
+            "browser": "android",
+            "device": "Samsung Galaxy S20",
+            "browser_version": null
+        },           
+        {
+            "os": "ios",
+            "os_version": "14",
+            "browser": "ipad",
+            "device": "iPad 8th",
+            "browser_version": null
+        },        
+        {
+            "os": "Windows",
+            "os_version": "10",
+            "browser": "chrome",
+            "device": null,
+            "browser_version": "88.0"
+        },
+        {
+            "os": "Windows",
+            "os_version": "8",
+            "browser": "edge",
+            "device": null,
+            "browser_version": "80.0"
+        },
+        {
+            "os": "Windows",
+            "os_version": "10",
+            "browser": "firefox",
+            "device": null,
+            "browser_version": "85.0"
+        },        
+        {
+            "os": "OS X",
+            "os_version": "Big Sur",
+            "browser": "edge",
+            "device": null,
+            "browser_version": "88.0"
+        },
+        {
+            "os": "OS X",
+            "os_version": "Big Sur",
+            "browser": "chrome",
+            "device": null,
+            "browser_version": "88.0"
+        },        
+        {
+            "os": "ios",
+            "os_version": "11",
+            "browser": "iphone",
+            "device": "iPhone SE",
+            "browser_version": null
+        }
+    ],
+    "test": [
+        {"cmd": "getPage", "url": "https://www.haven.com" },
+        {"cmd": "clickElement", "by": { "id": "onetrust-accept-btn-handler" }, "waitFor": 2000 },
+        {"cmd": "saveImage", "name": "index_page.png"},
+        {"cmd": "element",
+            "by": { "className": "bl-haven-searchEntryWidget" },
+            "$ref": "elm1",
+            "descendants": [
+                { "cmd": "element", "by": { "xpath": "./div/div/div/div[1]" }, "$ref": "parkInput" },
+                { "cmd": "element", "by": { "xpath": "./div/div/div/div[2]" }, "$ref": "dateInput" },
+                { "cmd": "element", "by": { "xpath": "./div/div/div/div[3]" }, "$ref": "guestInput" },
+                { "cmd": "element", "by": { "xpath": "./div/div/div/div[4]" }, "$ref": "searchButton" }
+            ]
+        },
+        {"cmd": "clickElement", "by": { "ref": "parkInput" } },
+        {"cmd": "saveImage", "name": "date_input.png"}
+    ]
+}

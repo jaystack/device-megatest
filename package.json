@@ -11,17 +11,38 @@
     "cdk": "cdk"
   },
   "devDependencies": {
-    "@aws-cdk/assert": "1.90.1",
+    "@aws-cdk/assert": "1.91",
+    "@types/aws-lambda": "^8.10.72",
+    "@types/express": "^4.17.11",
     "@types/jest": "^26.0.10",
     "@types/node": "10.17.27",
+    "aws-cdk": "1.90.1",
+    "esbuild": "^0.8.53",
     "jest": "^26.4.2",
     "ts-jest": "^26.2.0",
-    "aws-cdk": "1.90.1",
     "ts-node": "^9.0.0",
     "typescript": "~3.9.7"
   },
   "dependencies": {
-    "@aws-cdk/core": "1.90.1",
+    "-": "0.0.1",
+    "@aws-cdk/aws-apigatewayv2": "^1.91.0",
+    "@aws-cdk/aws-apigatewayv2-integrations": "^1.91.0",
+    "@aws-cdk/aws-cloudfront": "^1.91.0",
+    "@aws-cdk/aws-cloudfront-origins": "^1.91.0",
+    "@aws-cdk/aws-iam": "^1.91.0",
+    "@aws-cdk/aws-lambda-event-sources": "^1.91.0",
+    "@aws-cdk/aws-lambda-nodejs": "^1.91.0",
+    "@aws-cdk/aws-s3": "^1.91.0",
+    "@aws-cdk/aws-sns": "^1.91.0",
+    "@aws-cdk/aws-sqs": "^1.91.0",
+    "@aws-cdk/core": "1.91",
+    "@types/selenium-webdriver": "^4.0.11",
+    "aws-sdk": "^2.853.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "preact": "^10.5.12",
+    "preact-render-to-string": "^5.1.12",
+    "selenium-webdriver": "^4.0.0-beta.1",
     "source-map-support": "^0.5.16"
   }
 }

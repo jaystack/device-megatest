@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
     "target": "ES2018",
-    "module": "commonjs",
-    "lib": ["es2018"],
+    "module": "CommonJS",
+    "lib": ["es2018","ES2020.Promise"],
     "declaration": true,
     "strict": true,
     "noImplicitAny": true,
@@ -17,6 +17,8 @@
     "inlineSources": true,
     "experimentalDecorators": true,
     "strictPropertyInitialization": false,
+    "jsx": "react",
+    "jsxFactory": "h",    
     "typeRoots": ["./node_modules/@types"]
   },
   "exclude": ["cdk.out"]

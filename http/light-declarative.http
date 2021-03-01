@@ -1,0 +1,126 @@
+POST https://ts2k6fvv6g.execute-api.us-east-1.amazonaws.com
+Content-Type: application/json
+
+{
+    "devices": [
+        {
+            "os": "ios",
+            "os_version": "14",
+            "browser": "iphone",
+            "device": "iPhone XS",
+            "browser_version": null
+        },
+        {
+            "os": "ios",
+            "os_version": "14",
+            "browser": "iphone",
+            "device": "iPhone 12 Pro Max",
+            "browser_version": null
+        },       
+        {
+            "os": "ios",
+            "os_version": "12",
+            "browser": "iphone",
+            "device": "iPhone 7",
+            "browser_version": null
+        },
+        {
+            "os": "ios",
+            "os_version": "10",
+            "browser": "iphone",
+            "device": "iPhone 7",
+            "browser_version": null
+        },
+        {
+            "os": "android",
+            "os_version": "11.0",
+            "browser": "android",
+            "device": "Samsung Galaxy S20",
+            "browser_version": null
+        },           
+        {
+            "os": "ios",
+            "os_version": "14",
+            "browser": "ipad",
+            "device": "iPad 8th",
+            "browser_version": null
+        },        
+        {
+            "os": "Windows",
+            "os_version": "10",
+            "browser": "chrome",
+            "device": null,
+            "browser_version": "88.0"
+        },
+        {
+            "os": "Windows",
+            "os_version": "8",
+            "browser": "edge",
+            "device": null,
+            "browser_version": "80.0"
+        },
+        {
+            "os": "Windows",
+            "os_version": "10",
+            "browser": "firefox",
+            "device": null,
+            "browser_version": "85.0"
+        },        
+        {
+            "os": "OS X",
+            "os_version": "Big Sur",
+            "browser": "edge",
+            "device": null,
+            "browser_version": "88.0"
+        },
+        {
+            "os": "OS X",
+            "os_version": "Big Sur",
+            "browser": "chrome",
+            "device": null,
+            "browser_version": "88.0"
+        },        
+        {
+            "os": "ios",
+            "os_version": "11",
+            "browser": "iphone",
+            "device": "iPhone SE",
+            "browser_version": null
+        }
+    ],
+    "test": [
+        {"cmd": "getPage", "url": "https://www.haven.com" },
+        {"cmd": "snapshot", "name": "index_page"},
+        {"cmd": "element", "by": { "id": "onetrust-accept-btn-handler" }, "$ref": "joe", "waitFor": 2000 },
+        {"cmd": "clickElement", "by": { "ref": "joe" } },
+        {"cmd": "snapshot", "name": "consent_clicked"},
+        {"cmd": "wait", "ms": 1200 },
+        {"cmd": "snapshot", "name": "after_wait"},
+        {"cmd": "element",
+            "by": { "className": "bl-haven-searchEntryWidget" },
+            "$ref": "search-widget"
+        },
+        { "cmd": "element", "by": { "xpath": "./div/div/div/div[1]", "under": "search-widget" }, "$ref": "parkInputGroup" },
+        { "cmd": "element", "by": { "xpath": "./div/div/div/div[2]", "under": "search-widget" }, "$ref": "dateInputGroup" },
+        { "cmd": "element", "by": { "xpath": "./div/div/div/div[3]", "under": "search-widget" }, "$ref": "guestInputGroup" },
+        { "cmd": "element", "by": { "xpath": "./div/div/div/div[4]", "under": "search-widget" }, "$ref": "searchButtonGroup" },
+        { "cmd": "clickElement", "by": { "xpath": ".//div/button[1]", "under": "parkInputGroup" } },
+        {"cmd": "snapshot", "name": "park_input"},
+        { "cmd": "clickElement", "by": { "xpath": ".//span/button[1]", "under": "parkInputGroup" } },
+        {"cmd": "snapshot", "name": "park_selected"},
+        { "cmd": "clickElement", "by": { "xpath": ".//*[@class='flatpickr-day '][1]", "under": "dateInputGroup" } },
+        {"cmd": "snapshot", "name": "date_selected"},
+        { "cmd": "clickElement", "by": { "className": "bl-haven-dropdown__doneButton", "under": "dateInputGroup" } },
+        {"cmd": "snapshot", "name": "date_picked"},
+        { "cmd": "clickElement", "by": { "xpath": ".//button[1]", "under": "searchButtonGroup" } },
+        {"cmd": "snapshot", "name": "search_press_1"},
+        { "cmd": "clickElement", "by": { "className": "bl-haven-dropdown__doneButton", "under": "guestInputGroup" } },
+        {"cmd": "snapshot", "name": "guests_picked"},
+        { "cmd": "clickElement", "by": { "xpath": ".//button[1]", "under": "searchButtonGroup" } },
+        {"cmd": "snapshot", "name": "search_press_2"},
+        {"cmd": "wait", "ms": 1500 },
+        {"cmd": "snapshot", "name": "delay_1500"},
+        { "cmd": "clickElement", "by": { "css": ".hv-info-overlay-container .hv-button" }, "waitFor": 1000 },
+        {"cmd": "snapshot", "name": "delay_1500"}
+    ]
+}
